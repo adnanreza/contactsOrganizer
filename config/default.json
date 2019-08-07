@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://adnan:LSkuB8jKmMWUsed@contactsorganizer-k3cp7.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://adnan:LSkuB8jKmMWUsed@contactsorganizer-k3cp7.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secretSauce"
 }
