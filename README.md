@@ -1,6 +1,6 @@
 # contactsOrganizer
 
-## Deployed Link: https://immense-beach-76151.herokuapp.com/
+## Deployed Link: http://corganizer.adnanreza.com/
 
 
 ## Author
