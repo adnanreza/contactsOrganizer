@@ -392,7 +392,7 @@ table th {
 .item-enter-active {
   opacity: 1;
   right: 0px;
-  transition: opacity 500ms ease-in, right 500ms ease-in;
+  transition: opacity 500ms ease-in-out, right 500ms ease-in-out;
 }
 .item-exit {
   opacity: 1;
@@ -401,7 +401,7 @@ table th {
 .item-exit-active {
   opacity: 0;
   left: 100px;
-  transition: opacity 500ms ease-out, left 500ms ease-out;
+  transition: opacity 500ms ease-in-out, left 500ms ease-in-out;
 }
 
 /* Mobile Styles */
