@@ -1,5 +1,4 @@
 import authReducer from '../../context/auth/authReducer';
-import axios from 'axios';
 
 const initialState = {
   token: localStorage.getItem('token'),
