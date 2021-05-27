@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Button, Form, Grid, Header, Segment, Container } from 'semantic-ui-react'
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
 
@@ -42,39 +43,43 @@ const Login = props => {
   };
 
   return (
-    <div className='form-containter'>
-      <h1>
-        Account <span className='text-primary'>Login</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='email'
-            name='email'
-            value={email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            onChange={onChange}
-            required
-          />
-        </div>
+    <Container>
+      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+      <Grid.Column style={{ maxWidth: 450 }}>
+        <Header as='h2' color='blue' textAlign='center'>
+          Log-in to your account
+        </Header>
+        <Form onSubmit={onSubmit}>
+        <Segment stacked>
+          <Form.Field>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='email'
+              name='email'
+              value={email}
+              onChange={onChange}
+              required
+            />
+          </Form.Field>
+          <Form.Field>
+            <label htmlFor='password'>Password</label>
+            <input
+              type='password'
+              name='password'
+              value={password}
+              onChange={onChange}
+              required
+            />
+          </Form.Field>
 
-        <input
-          type='submit'
-          value='Login'
-          className='btn btn-primary btn-block'
-        />
-      </form>
-    </div>
+          <Button color='blue' fluid size='large' type='submit' value='Login'>
+              Login
+          </Button>
+        </Segment>
+        </Form>
+      </Grid.Column>
+      </Grid>
+    </Container>
   );
 };
 
