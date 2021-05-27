@@ -1,5 +1,5 @@
 {
-  "name": "contactsOrganizer",
+  "name": "contacts-organizer",
   "version": "1.0.0",
   "description": "Contact Organizer App",
   "main": "server.js",
