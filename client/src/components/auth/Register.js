@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Button, Form, Grid, Header, Segment, Container } from 'semantic-ui-react'
 import AuthContext from "../../context/auth/authContext";
 import AlertContext from "../../context/alert/alertContext";
 
@@ -43,12 +44,15 @@ const Register = props => {
   };
 
   return (
-    <div className='form-containter'>
-      <h1>
-        Account <span className='text-primary'>Register</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className='form-group'>
+    <Container>
+    <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+    <Grid.Column style={{ maxWidth: 450 }}>
+      <Header as='h2' color='blue' textAlign='center'>
+        Log-in to your account
+      </Header>
+      <Form onSubmit={onSubmit}>
+        <Segment stacked>
+          <Form.Field>
           <label htmlFor='name'>Name</label>
           <input
             type='text'
@@ -57,8 +61,8 @@ const Register = props => {
             onChange={onChange}
             required
           />
-        </div>
-        <div className='form-group'>
+        </Form.Field>
+        <Form.Field>
           <label htmlFor='email'>Email</label>
           <input
             type='email'
@@ -67,8 +71,8 @@ const Register = props => {
             onChange={onChange}
             required
           />
-        </div>
-        <div className='form-group'>
+        </Form.Field>
+        <Form.Field>
           <label htmlFor='password'>Password</label>
           <input
             type='password'
@@ -78,8 +82,8 @@ const Register = props => {
             required
             minLength='6'
           />
-        </div>
-        <div className='form-group'>
+        </Form.Field>
+        <Form.Field>
           <label htmlFor='password2'>Confirm Password</label>
           <input
             type='password'
@@ -89,14 +93,15 @@ const Register = props => {
             required
             minLength='6'
           />
-        </div>
-        <input
-          type='submit'
-          value='Register'
-          className='btn btn-primary btn-block'
-        />
-      </form>
-    </div>
+        </Form.Field>
+        <Button color='blue' fluid size='large' type='submit' value='Register'>
+              Register
+          </Button>
+        </Segment>
+      </Form>
+      </Grid.Column>
+      </Grid>
+    </Container>
   );
 };
 
