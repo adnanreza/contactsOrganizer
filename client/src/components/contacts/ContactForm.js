@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Button, Form, Grid, Header, Segment, Container, Checkbox } from 'semantic-ui-react'
 import ContactContext from "../../context/contact/contactContext";
 
 const ContactForm = () => {
@@ -53,63 +54,73 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit}>
       <h2 className='text-primary'>
         {current ? "Edit Contact" : "Add Contact"}
       </h2>
-      <input
-        type='text'
-        name='name'
-        placeholder='Name'
-        value={name}
-        onChange={onChange}
-      />
-      <input
-        type='email'
-        name='email'
-        placeholder='Email'
-        value={email}
-        onChange={onChange}
-      />
-      <input
-        type='text'
-        name='phone'
-        placeholder='Phone'
-        value={phone}
-        onChange={onChange}
-      />
-      <h5>Contact Type</h5>
-      <input
+      <Form.Field>
+        <input
+          type='text'
+          name='name'
+          placeholder='Name'
+          value={name}
+          onChange={onChange}
+        />
+      </Form.Field>
+      <Form.Field>
+        <input
+          type='email'
+          name='email'
+          placeholder='Email'
+          value={email}
+          onChange={onChange}
+        />
+      </Form.Field>
+      <Form.Field>
+        <input
+          type='text'
+          name='phone'
+          placeholder='Phone'
+          value={phone}
+          onChange={onChange}
+        />
+       </Form.Field> 
+      <Header as='h5'>Contact Type</Header>
+      <Form.Field>
+        <Checkbox
+          radio
+          type='radio'
+          label='Personal'
+          name='type'
+          value='personal'
+          checked={type === "personal"}
+          onChange={onChange}
+        />
+      </Form.Field>
+      <Form.Field>
+      <Checkbox
+        radio
         type='radio'
-        name='type'
-        value='personal'
-        checked={type === "personal"}
-        onChange={onChange}
-      />{" "}
-      Personal{" "}
-      <input
-        type='radio'
+        label='Professional'
         name='type'
         value='professional'
         checked={type === "professional"}
         onChange={onChange}
-      />{" "}
-      Professional{" "}
+      />
+      </Form.Field>
       <div>
-        <input
-          type='submit'
-          value={current ? "Update Contact" : "Add Contact"}
-          className='btn btn-primary btn-block'
-        />
+        <Button type='submit' value={current ? "Update Contact" : "Add Contact"}>
+          {current ? "Update Contact" : "Add Contact"}
+        </Button>
       </div>
       {current && (
         <div>
-          <button className='btn btn-light btn-block' onClick={clearAll}>
+          <Button onClick={clearAll}>
             Clear
-          </button>
+          </Button>
         </div>
       )}
-    </form>
+    </Form>
   );
 };
 

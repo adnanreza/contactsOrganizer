@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Button, Form, Grid, Header, Segment, Container } from 'semantic-ui-react'
 import Contacts from "../contacts/Contacts";
 import ContactForm from "../contacts/ContactForm";
 import ContactFilter from "../contacts/ContactFilter";
@@ -13,7 +14,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='grid-2'>
+    <Container>
       <div>
         <ContactForm />
       </div>
@@ -21,7 +22,7 @@ const Home = () => {
         <ContactFilter />
         <Contacts />
       </div>
-    </div>
+    </Container>
   );
 };
 
