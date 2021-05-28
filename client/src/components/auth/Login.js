@@ -50,7 +50,7 @@ const Login = props => {
           Log-in to your account
         </Header>
         <Form onSubmit={onSubmit}>
-        <Segment stacked>
+        <Segment>
           <Form.Field>
             <label htmlFor='email'>Email</label>
             <input
