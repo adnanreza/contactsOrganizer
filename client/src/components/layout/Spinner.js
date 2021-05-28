@@ -1,14 +1,10 @@
 import React, { Fragment } from "react";
-import loading from "./loading.gif";
+import { Loader } from 'semantic-ui-react'
 
 const Spinner = () => {
   return (
     <Fragment>
-      <img
-        src={loading}
-        alt='Loading...'
-        style={{ width: "200px", margin: "auto", display: "block" }}
-      />
+      <Loader active inline='centered' size='massive' />
     </Fragment>
   );
 };
