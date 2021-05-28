@@ -1,6 +1,7 @@
 import React, { Fragment, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react'
 import AuthContext from '../../context/auth/authContext';
 import ContactContext from '../../context/contact/contactContext';
 
@@ -17,37 +18,39 @@ const Navbar = ({ title, icon }) => {
   };
 
   const authLinks = (
-    <Fragment>
-      <li>Hello {user && user.name}</li>
-      <li>
+    <>
+      <Menu.Item>Hello {user && user.name}</Menu.Item>
+      <Menu.Item>
         <a onClick={onLogout} href='#!'>
           <i className='fas fa-sign-out-alt' />
           <span className='hide-sm'>Logout</span>
         </a>
-      </li>
-    </Fragment>
+      </Menu.Item>
+    </>
   );
 
   const guestLinks = (
-    <Fragment>
-      <li>
+    <>
+      <Menu.Item>
         <Link to='/register'>Register</Link>
-      </li>
-      <li>
+      </Menu.Item>
+      <Menu.Item>
         <Link to='/login'>Login</Link>
-      </li>
-    </Fragment>
+      </Menu.Item>
+    </>
   );
 
   return (
-    <div className='navbar bg-primary'>
-      <h1>
-        <i className={icon} />
-        {<span> </span>}
-        {title}
-      </h1>
-      <ul>{isAuthenticated ? authLinks : guestLinks}</ul>
-    </div>
+      <div>
+        <Menu secondary inverted color='blue'>
+          <Menu.Item>
+            <i className={icon} />&nbsp;&nbsp;{title}
+          </Menu.Item>
+          <Menu.Menu position='right'>
+              {isAuthenticated ? authLinks : guestLinks}
+          </Menu.Menu>
+        </Menu>
+      </div>
   );
 };
 
