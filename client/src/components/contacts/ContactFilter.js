@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useEffect } from "react";
+import { Form } from 'semantic-ui-react'
 import ContactContext from "../../context/contact/contactContext";
 
 const ContactFilter = () => {
@@ -22,14 +23,16 @@ const ContactFilter = () => {
   };
 
   return (
-    <form>
-      <input
-        ref={text}
-        type='text'
-        placeholder='Filter Contacts...'
-        onChange={onChange}
-      />
-    </form>
+    <Form>
+      <Form.Field>
+        <input
+          ref={text}
+          type='text'
+          placeholder='Filter Contacts...'
+          onChange={onChange}
+        />
+      </Form.Field>
+    </Form>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Button, Form, Grid, Header, Segment, Container } from 'semantic-ui-react'
+import { Container, Divider, Segment } from 'semantic-ui-react'
 import Contacts from "../contacts/Contacts";
 import ContactForm from "../contacts/ContactForm";
 import ContactFilter from "../contacts/ContactFilter";
@@ -15,13 +15,15 @@ const Home = () => {
 
   return (
     <Container>
-      <div>
+      <Segment>
         <ContactForm />
-      </div>
-      <div>
+      </Segment>
+      <Divider/>
+      <Segment>
         <ContactFilter />
+        <Divider/>
         <Contacts />
-      </div>
+      </Segment>
     </Container>
   );
 };

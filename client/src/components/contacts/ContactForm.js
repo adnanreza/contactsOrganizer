@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Button, Form, Grid, Header, Segment, Container, Checkbox } from 'semantic-ui-react'
+import { Button, Form, Header, Label } from 'semantic-ui-react'
 import ContactContext from "../../context/contact/contactContext";
 
 const ContactForm = () => {
@@ -87,38 +87,38 @@ const ContactForm = () => {
        </Form.Field> 
       <Header as='h5'>Contact Type</Header>
       <Form.Field>
-        <Checkbox
-          radio
+        <input
           type='radio'
           label='Personal'
           name='type'
           value='personal'
+          class="hidden" readonly="" tabindex="0"
           checked={type === "personal"}
           onChange={onChange}
-        />
+        />&nbsp;
+        <Label as='a' color='orange' size='large'>Personal</Label>
       </Form.Field>
       <Form.Field>
-      <Checkbox
-        radio
-        type='radio'
-        label='Professional'
-        name='type'
-        value='professional'
-        checked={type === "professional"}
-        onChange={onChange}
-      />
+        
+        <input
+          type='radio'
+          label='Professional'
+          name='type'
+          value='professional'
+          class="hidden" readonly="" tabindex="0"
+          checked={type === "professional"}
+          onChange={onChange}
+        />
+        &nbsp;
+        <Label as='a' color='teal' size='large'>Professional</Label>
       </Form.Field>
-      <div>
-        <Button type='submit' value={current ? "Update Contact" : "Add Contact"}>
+      <Button primary type='submit' value={current ? "Update Contact" : "Add Contact"}>
           {current ? "Update Contact" : "Add Contact"}
-        </Button>
-      </div>
+      </Button>
       {current && (
-        <div>
-          <Button onClick={clearAll}>
+          <Button secondary onClick={clearAll}>
             Clear
           </Button>
-        </div>
       )}
     </Form>
   );
